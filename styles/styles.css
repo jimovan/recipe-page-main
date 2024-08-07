@@ -1,0 +1,222 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+    height: 100%;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+footer {
+    margin: 2rem;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+:root {
+    --clr-primary: hsl(14, 45%, 36%);
+    --clr-secondary: hsl(332, 51%, 32%);
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-rose-white: hsl(330, 100%, 98%);
+    --clr-light-grey: hsl(30, 18%, 87%);
+    --clr-wenge-brown: hsl(30, 10%, 34%);
+    --clr-dark-charcoal: hsl(24, 5%, 18%);
+
+    --clr-background: hsl(30, 54%, 90%);
+
+    --ff-regular: 'Outfit', sans-serif;
+    --ff-heading: 'Young Serif', serif;
+
+    --fw-light: 400;
+    --fw-regular: 600;
+    --fw-bold: 700;
+}
+
+body {
+    background-color: var(--clr-white);
+    font-family: var(--ff-regular);
+    font-weight: var(--fw-light);
+    font-size: 16px;
+    color: var(--clr-wenge-brown);
+    line-height: 1.5rem;
+
+    display: grid;
+    justify-items: center;
+}
+
+.recipe {
+    display: grid;
+    background-color: var(--clr-white);
+    padding: 0 2rem 2rem;
+    gap: 2rem;
+}
+
+.recipe__prep {
+    background-color: var(--clr-rose-white);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.heading {
+    color: var(--clr-primary);
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-light);
+    margin-bottom: 1rem;
+}
+
+.heading--title {
+    color: var(--clr-dark-charcoal);
+    font-size: 2.125rem;
+    font-weight: var(--fw-regular);
+    line-height: 34px;
+    letter-spacing: 1px;
+}
+
+.heading--prep {
+    color: var(--clr-secondary);
+    font-family: var(--ff-regular);
+    font-weight: var(--fw-bold);
+}
+
+.emphasis {
+    font-weight: var(--fw-bold);
+}
+
+.emphasis--primary {
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary);
+}
+
+ul,
+ol {
+    padding-inline-start: 1.2rem;
+}
+
+ul li,
+ol li {
+    padding-left: 1rem;
+}
+
+ul li:not(:last-child),
+ol li:not(:last-child) {
+    margin-bottom: .75rem;
+}
+
+li::marker {
+    color: var(--clr-primary);
+    font-weight: var(--fw-bold);
+}
+
+ul li::marker {
+    font-size: .75em;
+}
+
+.recipe__prep ul li::marker {
+    color: var(--clr-secondary);
+}
+
+.recipe__instructions {
+    padding: 2rem 0;
+    border-top: 1px solid var(--clr-light-grey);
+    border-bottom: 1px solid var(--clr-light-grey);
+}
+
+.nutrition__info {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 1rem 2rem;
+}
+
+.nutrition__item:not(:first-child) {
+    border-top: 1px solid var(--clr-light-grey);
+}
+
+@media screen and (max-width: 767px) {
+
+    img {
+        min-width: calc(100% + 4rem);
+        margin-left: -2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    body {
+        background-color: var(--clr-background);
+    }
+
+    .recipe {
+        margin-top: 5rem;
+        padding-top: 2rem;
+        max-width: 700px;
+        border-radius: 10px;
+    }
+
+    .recipe img {
+        border-radius: 10px;
+    }
+}
